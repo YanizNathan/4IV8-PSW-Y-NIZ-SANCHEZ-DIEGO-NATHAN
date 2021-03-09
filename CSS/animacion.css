@@ -1,0 +1,36 @@
+/*
+Vamos a crear una animacion a partir
+de frames, y los amos a hacer girar,
+alternar y transformar
+*/
+
+@keyframes animacion_test{
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: yellow;
+    }
+
+}
+
+@keyframes girar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes label_animation{
+    from{
+        transform: rotate(0deg);
+        margin-left: 0;
+    }
+    to{
+        transform: rotate(180deg);
+        margin-left: 85vw;
+    }
+}
