@@ -1,0 +1,25 @@
+body {
+    margin: 30px 0;
+    font: 22px sans-serif;
+    background: #CCE3DE;
+    color: #6b9080;
+}
+nav{
+    background-color: #F6FFF8;
+}
+
+
+nav, section, footer, article, aside{
+    border: 1px solid #A4C3B2;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+}
+
+article, aside{
+    width: 40%;
+    display: list-item;
+    height: 100px;
+    background-color: #EAF4F4;
+}
