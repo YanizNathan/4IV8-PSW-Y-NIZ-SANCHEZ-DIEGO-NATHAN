@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problema 01 JS</title>
-
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema01.js"></script>
 </head>
 <body>
     
@@ -21,16 +22,16 @@
 
     <form method="POST" name="formulario" action="">
 
-        <table>
+        <table align="center" border="1">
             <tr>
-                <td class="td_sup">introduce la cantidad a invertir</td>
-                <td><input type="text" name="cantidad"
-                        onkeypress=""></td>
+                <td class="td_sup">Introduce la cantidad a invertir</td>
+                <td class="td:inf"><input type="text" 
+                    name="cantidad" onkeypress="return validarn(event)"></td>
             </tr>
             <tr>
                 <td></td>
                 <td class="td_inf"><input type="button" value="interes"
-                    name="enviar" onclick=""></td>
+                    name="enviar" onclick="interes()"></td>
 
             
             </tr>
@@ -43,7 +44,7 @@
             <tr>
                 <td></td>
                 <td><input type="button" value="Borrar" 
-                    name="borrar" onclick=""></td>
+                    name="borrar" onclick="borrar()"></td>
             </tr>
             
         </table>
