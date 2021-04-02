@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 05 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema05.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+        5- Un maestro desea saber qué porcentaje de hombres y qué porcentaje de mujeres
+       hay en un grupo de estudiantes.
+
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+                
+                <td class="td_sup">
+                    <input type="text" name="num_chlopcy" onkeypress="return validarn(event)">
+                </td>
+                <td class="td_sup">
+                   Cuantos vatos hay?
+                </td>
+            </tr>
+            <tr>
+               
+                <td class="td_inf">
+                    <input type="text" name="num_dziewczynki" onkeypress="return validarn(event)">
+                </td>
+                <td class="td_inf">
+                    Cuantas feminas se encuentran?
+                </td>
+            </tr>
+            <tr>
+               
+                <td class="td_sup">
+                    <input type="button" value="Calcular porcentajes" name="enviar" onclick="calculo()">
+                </td>
+                <td class="td_sup"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="final_chlopcy" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+                <td class="td_inf">
+                    El porcentaje de hombres 
+                <td class="td_inf">
+            </tr>
+            <tr>
+              
+                <td class="td_sup">
+                    <input type="text" name="final_dziewczynki" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+                <td class="td_sup">
+                    El porcentaje de mujeres
+            </tr>
+            <tr>
+                
+                <td class="td_inf">
+                    <input type="button" value="Borrar" name="reset" onclick="borrar()">
+                </td>
+                <td class="td_inf"></td>
+            </tr>
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>
