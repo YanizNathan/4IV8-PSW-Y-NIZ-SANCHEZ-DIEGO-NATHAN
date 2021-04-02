@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 02 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema02.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+       2.- Un vendedor recibe un sueldo base mas un 10% extra por comision de sus ventas.
+       el vendedor desea saber cuanto dinero obtendrá
+       por concepto de comision de us ventas. 
+       El vendedor desea saber cuanto dinero obtendrá 
+       por comisiones por las tres ventas que realiza 
+       en el mes y el total que recibirá en el mes tomando en cuenta
+       su sueldo base y comisiones.
+
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+                <td class="td_sup">
+                    <input class="botones" type="text" name="sueldo" onkeypress="return validarn(event)"> 
+                </td>
+                <td class="td_sup">
+                    Cuanto gana usted?:
+                </td>
+
+                </tr>
+            <tr>
+                <td class="td_inf">
+                    <input class="botones" type="text" name="ventas" onkeypress="return validarn(event)"> 
+                </td>
+                <td class="td_inf">
+                    Cuantas ventas hizo?:
+                </td>
+                            
+            </tr>
+            <tr>
+             
+                
+                <td class="td_sup">
+                    <input class="botones" type="button" value="Obtener sueldo" name="enviar" onclick="calculo()">
+                </td>
+                <td class="td_sup"></td>
+            </tr>
+            <tr>
+                <td class="td_inf">
+                    <input class="botones" type="text" name="comisionn" id="cantidad" readonly="readonly" class="input_text"> 
+                </td>
+                <td class="td_inf">
+                    Lo que gano de comisiones fue:
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup">
+                    <input class="botones" type="text" name="sueldoti" id="cantidadi" readonly="readonly" class="input_text"> 
+                </td>
+                <td class="td_sup">
+                    Todo lo que tendra que recibir es:
+                </td>
+            </tr>
+            <tr>
+
+
+
+            </tr>
+             <td class="td_inf">
+                    <input class="botones" type="button" value="Borrar" name="reset" onclick="borrar()">
+             </td>
+             <td class="td_inf"></td>
+
+
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>

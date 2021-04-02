@@ -1,7 +1,7 @@
 .td_sup{
-    align-items: left;
+    align-items: center;
     width: 100;
-    justify-content: left;
+    justify-content: center;
     
 
 }
@@ -26,13 +26,52 @@
 }
 
 *{
-    background-color: #86deff;
+    background-color: #BFC3BA;
 }
 
 p{
     font-size: 16px;
     align-items: center;
     justify-content: center;
-    color: #452844;
+    color: #790475;
+}
 
+ 
+ tr {
+    background: #D0CEBA;
+ }
+
+ body {font-family: Arial, Helvetica, sans-serif;}
+
+table { 
+
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;  
+    margin: 45px;     
+    width: 480px; 
+    text-align: left;    
+    border-collapse: collapse;
+ }
+
+
+td {    
+    padding: 8px;     
+    background: #2F2235;     
+    border-bottom: 1px solid #fff;
+    color: #A9ACA9;    
+    border-top: 1px solid transparent;
+    font-size: 15px; 
+}
+
+tr:hover td { 
+    background: #60495A; 
+    color: #BFC3BA; 
+}
+
+.botones{
+    background-color: #3F3244;
+    color: #D0CEBA;
+}
+a {
+    font-size: 20;
 }

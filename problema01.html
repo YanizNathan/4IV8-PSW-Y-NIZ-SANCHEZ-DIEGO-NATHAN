@@ -10,48 +10,72 @@
 </head>
 <body>
     
-    <p>
+    <h1>
 
-        Se le ha ordenado diseñar una aplicacion
+       1.- Se le ha ordenado diseñar una aplicacion
         web la cual pueda calcular el interes
         del pago mensual de una inversion al 
         2%, para lo cual debera diseñar un 
         formulario que haga dicho calculo.
 
-    </p>
+    </h1>
 
     <form method="POST" name="formulario" action="">
 
-        <table align="center" border="1">
+        <center><table align="center" border="1">
             <tr>
                 <td class="td_sup">Introduce la cantidad a invertir</td>
-                <td class="td:inf"><input type="text" 
+                <td class="td:inf"><input class="botones" type="text" 
                     name="cantidad" onkeypress="return validarn(event)"></td>
             </tr>
             <tr>
                 <td></td>
-                <td class="td_inf"><input type="button" value="interes"
+                <td class="td_inf"><input class="botones" type="button" value="Interes"
                     name="enviar" onclick="interes()"></td>
 
             
             </tr>
             <tr>
+                <td class="td_inf">
+                    Cuantos meses pampum:
+                </td>
+                <td class="td_inf">
+                    <select class="botones" name="mes">
+                        <option class="botones" value="0">Picale aqui pampum
+                        <option class="botones" value="1">1
+                        <option class="botones"  value="2">2
+                        <option class="botones"  value="3">3
+                        <option class="botones"  value="4">4
+                        <option class="botones"  value="5">5
+                        <option class="botones"  value="6">6
+                        <option class="botones"  value="7">7
+                        <option class="botones"  value="8">8
+                        <option class="botones"  value="9">9
+                        <option class="botones"  value="10">10
+                        <option class="botones"  value="11">11
+                        <option class="botones"  value="12">12
+                    </select>
+                </td>
+            </tr>
+            <tr>
                 <td class="td_sup">Su saldo total con interes al 2% es:</td>
-                <td><input type="text" name="sueldoti"
+                <td><input class="botones" type="text" name="sueldoti"
                     id="cantidadi" readonly="readonly"
                     class="input_text"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="button" value="Borrar" 
+                <td><input class="botones" type="button" value="Borrar" 
                     name="reset" onclick="borrar()"></td>
             </tr>
             
         </table>
+    </center>
 
     </form>
     <br>
-    <a href="formulario.html">Regresar al formulario principal</a>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
 
 </body>
 </html>

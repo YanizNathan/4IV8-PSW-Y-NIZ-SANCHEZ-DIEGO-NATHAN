@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 03 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema03.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+       3.- Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea saber cuanto deberá pagar finalmente  por su compra.
+
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+                <td class="td_sup">
+                   Cuanto fue de su compra buenseñor?
+
+                </td>
+                <td class="td_sup">
+                    <input type="text" name="compra" onkeypress="return validarn(event)">
+                </td>
+
+                </tr>
+            <tr>
+                <td class="td_inf"></td>
+                <td class="td_inf">
+                    <input type="button" value="Obtener precio con descuento" name="enviar" onclick="calculo()">
+                </td>
+                            
+            </tr>
+            <tr>
+             
+                
+                <td class="td_sup">
+                    Lo que tendra que pagar es un enorme:
+                <td class="td_sup">
+                    <input type="text" name="final" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf">
+                   Le quitamos :
+                <td class="td_inf">
+                    <input type="text" name="final_descuento" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup"></td>
+                <td class="td_sup">
+                    <input type="button" value="Borrar" name="reset" onclick="borrar()">
+                </td>
+            </tr>
+           
+
+
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>

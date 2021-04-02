@@ -23,6 +23,8 @@ function interes(){
     var result = parseInt(valor);
     var interes = result*0.02;
     var total = result+interes;
+    var mes = interes*document.formulario.mes.value;
+    var total = result+mes;
 
     document.formulario.sueldoti.value = "$"+total;
 }
