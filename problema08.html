@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 2.2 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema08.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+        2.-Leer tres números diferentes e imprimir el número mayor de los tres.
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+                <td class="td_sup">
+                    Digite el primer número:
+                </td>
+                <td class="td_sup">
+                    <input class="botones" type="text" name="num_1" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf">
+                    Digite el segundo número:
+                </td>
+                <td class="td_inf">
+                    <input class="botones"  type="text" name="num_2" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup">
+                    Digite el tercer número:
+                </td>
+                <td class="td_sup">
+                    <input class="botones"  type="text" name="num_3" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf"></td>
+                <td class="td_inf">
+                    <input class="botones"  type="button" value="Hallar al mayor" name="enviar" onclick="calculo()">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup">
+                    El número mayor es:
+                <td class="td_sup">
+                    <input class="botones"  type="text" name="final_num" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf"></td>
+                <td class="td_inf">
+                    <input class="botones"  type="button" value="Borrar" name="reset" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>

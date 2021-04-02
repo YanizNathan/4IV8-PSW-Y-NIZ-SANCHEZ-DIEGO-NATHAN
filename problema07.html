@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 2.1 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema07.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+        1.-Leer 2 número: si son iguales que los multiplique, si el primero
+        es mayor que el segundo que los reste y si no que los sume
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+                <td class="td_sup">
+                    Aqui va el primero:
+                </td>
+                <td class="td_sup">
+                    <input class="botones" type="text" name="num_1" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf">
+                    Aqui va el segundo:
+                </td>
+                <td class="td_inf">
+                    <input class="botones"  type="text" name="num_2" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup"></td>
+                <td class="td_sup">
+                    <input class="botones"  type="button" value="Realizar una operación" name="enviar" onclick="calculo()">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_inf">
+                    Lo que sale es:
+                <td class="td_inf">
+                    <input class="botones"  type="text" name="final_num" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_sup"></td>
+                <td class="td_sup">
+                    <input class="botones"  type="button" value="Borrar" name="reset" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>

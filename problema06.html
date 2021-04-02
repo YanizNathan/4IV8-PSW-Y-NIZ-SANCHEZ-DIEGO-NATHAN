@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 06 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema06.js"></script>
+</head>
+<body>
+    
+    <h1>
+
+        6.- Realizar un algoritmo que calcule la edad de una persona.
+
+    </h1>
+
+    <form method="post" name="formulario">
+
+        <center><table align="center" border="1">
+            <tr>
+               
+                <td class="td_sup">
+                    <input class="botones"  type="text" name="año_actual" onkeypress="return validarn(event)">
+                </td>
+                <td class="td_sup">
+                    Digite el año actual:
+                </td>
+            </tr>
+            <tr>
+                
+                <td class="td_inf">
+                    <input class="botones"  type="text" name="año_nacer" onkeypress="return validarn(event)">
+                </td>
+                <td class="td_inf">
+                    Digite el año de su nacimiento:
+                </td>
+            </tr>
+            <tr>
+               
+                <td class="td_sup">
+                    <input class="botones"  type="button" value="Calcular edad" name="enviar" onclick="calculo()">
+                </td>
+                <td class="td_sup"></td>
+            </tr>
+            <tr>
+               
+                <td class="td_inf">
+                    <input class="botones"  type="text" name="final" id="cantidad" readonly="readonly" class="input_text">
+                </td>
+                <td class="td_inf">
+                    Edad aproximada:
+                </td>
+            </tr>
+            <tr>
+                
+                <td class="td_sup">
+                    <input class="botones" type="button" value="Borrar" name="reset" onclick="borrar()">
+                </td>
+                <td class="td_sup"></td>
+            </tr>
+        </table>
+    </center>
+
+    </form>
+    <br>
+    <a href="./Probmenu.html">Regresar al Menu de problemas</a>
+    
+
+</body>
+</html>
