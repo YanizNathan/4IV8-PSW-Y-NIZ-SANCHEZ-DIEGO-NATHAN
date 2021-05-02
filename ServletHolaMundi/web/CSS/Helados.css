@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Sansita+Swashed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  background-color: rgb(193, 236, 247);
+  margin: auto;
+}
+
+hr{
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 30%;
+  padding-right: 30%;
+  border-width: 10px;
+  color: black;
+}
+
+footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgb(249, 255, 199);
+}
+
+.bienvenida{
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.title{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Sansita Swashed', cursive;
+  font-size: xx-large;
+}
+
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.containerRegistro form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+  margin-bottom: 10px;
+  width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: black;
+}
+
+.button{
+  height: 35px;
+  margin: 35px 0;
+}
+
+.button input{
+  height: auto;
+  width: auto;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #8B0000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+}
+
+.button input:hover{
+ background: black;
+}
+
+form .button{
+   height: 35px;
+   margin: 35px 0;
+}
+
+form .button input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #8B0000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form .button input:hover{
+  background: black;
+}
+
+.box_form{
+  border-radius: 5px;
+  border: none;
+  background: white;
+  color: grey;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media(max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .category{
+        width: 100%;
+    }
+    .content form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 5px;
+    }
+}
+
+@media(max-width: 459px){
+    .container .content .category{
+        flex-direction: column;
+    }
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/05/2021, 11:45:06 AM
+    Author     : die_w
+*/
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Editar perfil | Ben & Jerry's</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/icon.png" type="image/png">
+        <link rel="stylesheet" href="css/Helados.css" type="text/css"/>
+        <script src="JS/Validar.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="containerRegistro">
+                <div class="title" style="text-align: center;">¿Cómo lo hago?</div>
+                <br>
+                <p style="text-align: center;">Llena la casilla con los nuevos datos
+                    <br>dar clic en la opción <i>¡Actualizar!</i> ¡Y listo! tus datos fueron actualizados exitosamente.
+                </p><hr>
+                <form method="post" name="formulariomodificar" action="Modificar" onsubmit="return validarRegistro(this)">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Nombre</span>
+                            <input type="text" name="nombrem" onkeypress="return validarn(event);" required>
+                            <span class="details">Apellido paterno</span>
+                            <input type="text" name="appatm" onkeypress="return validarn(event);" required>
+                            <span class="details">Apellido materno</span>
+                            <input type="text" name="apmatm" onkeypress="return validarn(event);" required>
+                            <span class="details">Edad</span>
+                            <input type="number" name="nombrem" onkeypress="return validarn(event);" required>
+                            <span class="details">Fecha de nacimiento</span>
+                            <input type="text" name="appatm" onkeypress="return validarn(event);" required>
+                            <span class="details">Domicilio</span>
+                            <input type="text" name="apmatm" onkeypress="return validarn(event);" required>
+                            <span class="details">Teléfono de casa</span>
+                            <input type="number" name="nombrem" onkeypress="return validarn(event);" required>
+                            <span class="details">Celular</span>
+                            <input type="number" name="appatm" onkeypress="return validarn(event);" required>
+                            <div class="button">
+                            <input type="submit" value="¡Actualizar!">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+           <p style="text-align: center;">Trabajo hecho Por Bravo Calderon Alexa Zarahí, Martinez Bravo Eduardo y Yániz Sánchez Diego Nathán
+                <br>
+                Grupo:4IV8
+                <br><br>Profesor: Jaime Minor Gómez (Programación y Servicios Web).
+            </p>
+        </footer>
+    </body>
+</html>

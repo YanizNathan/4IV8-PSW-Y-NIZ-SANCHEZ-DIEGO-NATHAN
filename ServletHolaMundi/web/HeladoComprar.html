@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Comprar un helado | Ben & Jerry's</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/icon.png" type="image/png">
+        <link rel="stylesheet" href="css/Helados.css" type="text/css"/>
+        <script src="JS/Validar.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title" style="text-align: center;">¿Cómo lo hago?</div>
+            <br>
+            <p style="text-align: center;">Revisa las opciones que tenemos para ti.<br>No olvides recordar su ID para poder comprar.<br>Para terminar, solo ingresa el ID y Empieza a disfrutar de tu helado
+            </p>
+            <div class="containerConsulta">
+                <div class="title" style="text-align: center;"><hr>Revisar nuestro catalogo</div>
+                <form method="get" name="consultarregistro" action="Consultar">
+                    <div class="button">
+                        <input type="submit" value="¡Visualizar!">
+                    </div>
+                </form>
+            </div>
+            <div class="containerEliminar">
+                <div class="title" style="text-align: center;"><hr>Comprar un helado</div>
+                <form method="post" name="formularioeliminar" action="Eliminar" onsubmit="return validarIDE(this)"><br>
+                    <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Cual es el ID del Helado que deseasa?</span>
+                      <input type="number" name="ideliminar" placeholder="Digite el ID" required onkeypress="return validarn(event)">
+                    </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="¡Comprar!">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p style="text-align: center;">Trabajo hecho Por Bravo Calderon Alexa Zarahí, Martinez Bravo Eduardo y Yániz Sánchez Diego Nathán
+                <br>
+                Grupo:4IV8
+                <br><br>Profesor: Jaime Minor Gómez (Programación y Servicios Web).
+            </p>        </footer>
+    </body>
+</html>

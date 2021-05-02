@@ -1,0 +1,135 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29/04/2021, 08:17:19 PM
+    Author     : die_w
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Truculenta&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arimo', arial;
+  align-items:  center;
+}
+body{
+  height: 190vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #1a1c1d;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #1a1c1d;
+  padding: 25px 30px;
+  border-color: blue;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+  color: #aaaebc;
+}
+.input-box .poner{
+    background-color: gray;
+    color: black;
+}
+.containerRegistro form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 10px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  color: black;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: black;
+}
+ form .button{
+   height: 35px;
+   margin: 35px;
+  
+ }
+ .button .cboton{
+     color: black;
+      cursor: pointer;
+   transition: all 0.3s ease;
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: white;
+   font-size: 15px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: wheat;
+  
+   
+   
+ }
+ form .button input:hover{
+  background: white;
+ }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+    
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+.user-details .input-box .details{
+    color: #aaaebc;
+}
+
