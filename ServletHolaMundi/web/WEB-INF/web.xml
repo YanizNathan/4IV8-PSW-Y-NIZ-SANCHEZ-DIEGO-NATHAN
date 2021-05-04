@@ -28,6 +28,10 @@
         <servlet-name>editarUsuario</servlet-name>
         <servlet-class>editarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistroH</servlet-name>
+        <servlet-class>RegistroH</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -51,6 +55,10 @@
     <servlet-mapping>
         <servlet-name>editarUsuario</servlet-name>
         <url-pattern>/editarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroH</servlet-name>
+        <url-pattern>/RegistroH</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -13,42 +13,21 @@
         <div class="container">
             <div class="containerRegistro">
                 <div class="title" style="text-align: center;">Nuevo Producto</div>
-                <form name="formulario" method="get" action="Registro" onsubmit="return validarRegistro(this)">
-                    <div class="user-details">
+                <form name="formulario" method="get" action="RegistroH" onsubmit="return validarRegistro(this)">
+                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Nombre</span>
-                            <input type="text" name="nombre" placeholder="Digite el nombre del producto" required>
+                            <input type="text" name="name" placeholder="Como se llamará?" required>
                             <span class="details"><br>Precio</span>
-                            <input type="email" name="precio" placeholder="Digite el precio del producto" required onkeypress="return validarn(event)">
-                            <span class="details"><br>Peso(eng gramos)</span><br>
-                            <select class="box_form">
-                                <option value="0">Seleccione el peso de la grasa</option>
-                                <option value="100">100 gramos</option>
-                                <option value="200">200 gramos</option>
-                                <option value="300">300 gramos</option>
-                            </select>
-                            <span class="details"><br>Tamaño</span><br>
-                            <select class="box_form">
-                                <option value="0">Escoja el tamaño</option>
-                                <option value="s">Pequeño</option>
-                                <option value="m">Mediano</option>
-                                <option value="l">Grande</option>
-                            </select>
-                            <span class="details"><br>Recipiente</span><br>
-                            <select class="box_form">
-                                <option value="0">Escoja un recipiente</option>
-                                <option value="cono">Cono</option>
-                                <option value="vaso">Vaso</option>
-                                <option value="tupper">Tupper</option>
-                            </select>
-                            <span class="details"><br>Tipo</span><br>
-                            <select class="box_form">
-                                <option value="0">Seleccione un tipo de producto</option>
-                                <option value="fresa">Helado de fresa</option>
-                                <option value="limon">Helado de limón</option>
-                                <option value="vainilla">Helado de vainilla</option>
-                                <option value="chocolate">Helado de chocolate</option>
-                            </select>
+                            <input type="number" name="price" placeholder="Cual es su costo?" required>
+                            <span class="details"><br>Peso en gramos</span>
+                            <input type="number" name="gram" placeholder="Cuantos gramos tendrá" required>
+                            <span class="details"><br>Tamaño</span>
+                            <input type="text" name="size" placeholder="De que tamaño?" required>
+                            <span class="details"><br>En donde lo quiere poner</span>
+                            <input type="text" name="tipo" placeholder="Contenedor" required>
+                            <span class="details"><br>Sabor</span>
+                            <input type="text" name="tipo" placeholder="Que sabor" required>
                         </div>
                     </div>
                     <div class="button">

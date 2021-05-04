@@ -4,7 +4,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -12,26 +11,24 @@ import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
 
 public class Actualizar extends HttpServlet {
-    
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
     public void init(ServletConfig cfg) throws ServletException{
         //lo primero que necesitamos es trazar la ruta al servidor de la bd
-        String URL = "jdbc:mysql://localhost/registro4iv8";
-        //driver:gestor:puerto//ip/nombreBD
-        String userName = "root";
-        String password = "vaquero24";
+        String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+        String userName = "b6feddf2b85dcc";
+        String password = "25b467ec";
                 
         try{
             //tipo de driver
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
-            System.out.println("Conexión exitosa");
+            System.out.println("¡Conexión exitosa!");
         }catch(Exception e){
-            System.out.println("Conexión no exitosa");
+            System.out.println("Conexión no exitosa.");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
         }
@@ -82,52 +79,57 @@ public class Actualizar extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             
             //variables
-            String nom, appat, apmat, correo;
-            int id, edad;
+            String name, size, recipiente, tipo;
+            int id, price, gram;
             id=Integer.parseInt(request.getParameter("idactualizar"));
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Actualización de datos</title>");
+            out.println("<title>Actualización  | Ben & Jerry's</title>");
             out.println("<link rel=\"stylesheet\" href=\"./CSS/estilo.css\">");
             out.println("</head>");
             out.println("<body>");
             out.println("<div class=\"containerRegistro\">");
             out.println("<table border='2'>"
                     + "<thead>"
-                        + "<tr><th>ID</th>"
-                        + "<th>Nombre completo</th>"
-                        + "<th>Edad</th>"
-                        + "<th>Correo electrónico</th></tr>"
+                        + "<th><th>ID</th>"
+                        + "<th>Nombre</th>"
+                        + "<th>Precio</th>"
+                        + "<th>Gramos</th>"
+                        + "<th>Tamaño</th>"
+                        + "<th>Recipiente</th>"
+                        + "<th>Tipo</th>"
                     + "</thead>");
             try{
                 //mostramos los datos de el id del usuario ingresado en el index
-                String q="select * from mregistro where id_usu="+id;
+                String q="select * from helado where id_hel="+id;
                 set=con.createStatement();
                 rs=set.executeQuery(q);
                 while(rs.next()){
-                    id = rs.getInt("id_usu");
-                    nom = rs.getString("nom_usu");
-                    appat = rs.getString("appat_usu");
-                    apmat = rs.getString("apmat_usu");
-                    edad = rs.getInt("edad_usu");
-                    correo = rs.getString("correo_usu");
+                    id = rs.getInt("id_hel");
+                    name = rs.getString("name_hel");
+                    price = rs.getInt("price_hel");
+                    gram = rs.getInt("gram_hel");
+                    size = rs.getString("gram_hel");
+                    recipiente = rs.getString("recipiente_hel");
+                    tipo = rs.getString("tipo_hel");
                     out.println("<tbody>"
-                            + "<tr><td>"+id+"</td>"
-                            + "<td>"+nom+" "+appat+" "+apmat+"</td>"
-                            + "<td>"+edad+"</td>"
-                            + "<td>"+correo+"</td></tr>"
+                            + "<td>"+name+"</td>"
+                            + "<td>"+price+"</td>"
+                            + "<td>"+gram+"</td></tr>"
+                            + "<td>"+size+"</td>"
+                            + "<td>"+recipiente+"</td>"
+                            + "<td>"+tipo+"</td></tr>"
                             + "</tbody>");
                 }  
             }catch(Exception e){
-                System.out.println("Consulta no exitosa");
+                System.out.println("Consulta no exitosa.");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
             }
             out.println("</table>");
             out.println("<br>");
-            out.println("<a href='index.html'>Regresar a la pagina principal </a>");
             out.println("<div class=\"containerRegistro\">");
             out.println("<form name=\"datos_act\" method=\"get\" action=\"editarUsuario\" onsubmit=\"return validarDatosA(this)\">"
                     + "<div class=\"user-details\">"
@@ -136,20 +138,24 @@ public class Actualizar extends HttpServlet {
                     + "<input type=\"text\" name=\"nombrea\" placeholder=\"Digite el nombre actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
-                    + "<span class=\"details\">Correo electrónico</span>"
-                    + "<input type=\"email\" name=\"correoa\" placeholder=\"Digite el correo electrónico actualizado\" required>"
+                    + "<span class=\"details\">Precio</span>"
+                    + "<input type=\"number\" name=\"pricea\" placeholder=\"Digite el precio actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
-                    + "<span class=\"details\">Apellido paterno</span>"
-                    + "<input type=\"text\" name=\"appata\" placeholder=\"Digite el apellido paterno actualizado\" required>"
+                    + "<span class=\"details\">Gramos</span>"
+                    + "<input type=\"number\" name=\"grama\" placeholder=\"Digite los gramos actualizados\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
-                    + "<span class=\"details\">Apellido materno</span>"
-                    + "<input type=\"text\" name=\"apmata\" placeholder=\"Digite el apellido materno actualizado\" required>"
+                    + "<span class=\"details\">Tamaño</span>"
+                    + "<input type=\"text\" name=\"tamañoa\" placeholder=\"Digite el tamaño actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
-                    + "<span class=\"details\">Edad</span>"
-                    + "<input type=\"number\" name=\"edada\" placeholder=\"Digite la edad actualizada\" required>"
+                    + "<span class=\"details\">Recipiente</span>"
+                    + "<input type=\"text\" name=\"recipientea\" placeholder=\"Digite el recipiente actualizado\" required>"
+                    + "</div>"
+                    + "<div class=\"input-box\">"
+                    + "<span class=\"details\">Tipo</span>"
+                    + "<input type=\"text\" name=\"tipoa\" placeholder=\"Digite el tipo actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">ID</span>"
@@ -162,6 +168,7 @@ public class Actualizar extends HttpServlet {
                     + "</div>"
                     + "<br>");
             out.println("</div>");
+            out.println("<a href='index.html'>Regresar a la pagina principal.</a>");
             out.println("<script src=\"./JS/validacion.js\"></script>");
             out.println("</body>");
             out.println("</html>");

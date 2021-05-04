@@ -4,7 +4,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -12,24 +11,22 @@ import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
 
 public class Eliminar extends HttpServlet {
-    
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
     public void init(ServletConfig cfg) throws ServletException{
-        String URL = "jdbc:mysql://localhost/registro4iv8";
-        
-        String userName = "root";
-        String password = "vaquero24";
+        String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+        String userName = "b6feddf2b85dcc";
+        String password = "25b467ec";
                 
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
-            System.out.println("Conexión exitosa");
+            System.out.println("¡Conexión exitosa!");
         }catch(Exception e){
-            System.out.println("Conexión no exitosa");
+            System.out.println("Conexión no exitosa.");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
         }
@@ -87,33 +84,33 @@ public class Eliminar extends HttpServlet {
             
             //preparo mi sentencia: delete from tabla where atributo = valor
             
-            String q = "delete from mregistro where id_usu = "+id;
+            String q = "delete from helados where id_hel = "+id;
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Eliminar</title>");
-            out.println("<link rel=\"stylesheet\" href=\"./CSS/estilo2.css\">");
+            out.println("<title>Eliminación | Ben & Jerry's</title>");
+            out.println("<link rel=\"stylesheet\" href=\"./css/estilo2.css\">");
             out.println("</head>");
             out.println("<body>");
             
             try{
                 //update hay una modificacion/actualizacion a la tabla
                 set.executeUpdate(q);
-                System.out.println("Registro Eliminado");
-                out.println("<h1 class=\"title\" >Usuario Eliminado</h1>");
+                out.println("<h1 class=\"title\">Eliminación exitosa.</h1>");
+                System.out.println("Se ha completado con éxito.");
                 set.close();
             }catch(Exception e){
-                out.println("<h1 class=\"title\">Usuario NO Eliminado</h1>");
-                System.out.println("No se pudo eliminar el usuario");
+                out.println("<h1 class=\"title\">La operación salió mal.</h1>");
+                System.out.println("La operación ha fallado.");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
             }
             
             out.println("<br>");
-            out.println("<a class=\"link1\" href='index.html'>Regresar a la pagina principal </a>"
+            out.println("<a class=\"link1\" href='index.html'>Regresar a la pagina principal.</a>"
                         + "<br>"
-                        + "<a class=\"link2\" href='Consultar'>Consultar Usuarios</a>");
+                        + "<a class=\"link2\" href='Consultar'>Consultar productos.</a>");
             out.println("</body>");
             out.println("</html>");
         }

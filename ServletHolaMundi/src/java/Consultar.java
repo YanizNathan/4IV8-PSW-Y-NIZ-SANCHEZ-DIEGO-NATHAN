@@ -1,38 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-/*
-Connection nos ayuda a realizar la conexion con las bd, con el servidor
-*/
 import java.sql.Connection;
 import java.sql.DriverManager;
-/*
-Statement nos ayuda a poder definir y manipular los datos de las bd
-creacion de la bd, insertar tablas, eleminar tablas,  create, drop, alter
-    manipulacion de los datos, insert, update, delete
-*/
 import java.sql.Statement;
-/*
-nos ayuda para las querrys, o las consultas a la bd
-*/
 import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
 
-
-/**
- *
- * @author demon
- */
 public class Consultar extends HttpServlet {
+    private Connection con;
+    private Statement set;
+    private ResultSet rs;
+    
+    public void init(ServletConfig cfg) throws ServletException{
+        String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+        String userName = "b6feddf2b85dcc";
+        String password = "25b467ec";
+                
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, userName, password);
+            set = con.createStatement();
+            System.out.println("¡Conexión exitosa!");
+        }catch(Exception e){
+            System.out.println("Conexión no exitosa.");
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+        }
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,54 +41,11 @@ public class Consultar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    //variables globales
-    
-    private Connection con;
-    private Statement set;
-    private ResultSet rs;
-    
-    //el constructor del servlet
-    //nos va a ayudar a inicializar la conexion con la bd
-    
-    public void init(ServletConfig cfg) throws ServletException{
-        
-        //lo primero que necesitamos es trazar la ruta al servidor DB
-        String URL = "jdbc:mysql:3306//localhost/registro4iv8";
-        //driver:gestor:puerto//IP/nombreBD
-        
-        String userName = "root";
-        String password = "vaquero24";
-        
-        try{
-            //colocamos el tipo de driver
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            /*
-            en algunas ocaciones enviar error al conectarse con la bd
-            y eso se debe a que ya estegrado el puerto en el driver
-            URL = "jdbc:mysql://localhost/registro4iv8";
-            */
-            URL = "jdbc:mysql://localhost/registro4iv8";
-            con = DriverManager.getConnection(URL, userName, password);
-            set = con.createStatement();
-            System.out.println("Conexion exitosa");
-        
-        }catch(Exception e){
-            
-            System.out.println("Conexion no exitosa");
-            System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
-        
-        }
-    }
-    
-    
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -109,65 +64,67 @@ public class Consultar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Consultar</title>");            
+            out.println("<title>Consulta | Ben & Jerry's</title>");
+            out.println("<link rel=\"stylesheet\" href=\"./css/estilo2.css\">");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Tabla General de Usuarios</h1>");
-            out.println("<table border='2'>"
+            out.println("<h1 class=\"title\">Tabla de productos</h1>");
+            out.println("<table class=\"tabla2\" border='2'>"
                     + "<thead>"
-                        + "<tr><th>ID</th>"
-                        + "<th>Nombre Completo</th>"
-                        + "<th>Edad</th>"
-                        + "<th>Email</th></tr>"
+                        + "<th>ID</th>"
+                        + "<th>Nombre</th>"
+                        + "<th>Precio</th>"
+                        + "<th>Gramos</th>"
+                        + "<th>Tamaño</th>"
+                        + "<th>Recipiente</th>"
+                        + "<th>Tipo</th>"
                     + "</thead>");
             try{
                 //codigo java para la consulta
-                String nom, appat, apmat, correo;
-                int edad, id;
+                String name, size, recipiente, tipo;
+                int id, price, gram;
                 
                 //tenemos que crear la querry
                 
-                String q = "select * from mregistro";
+                String q = "select * from helados";
                 
                 set = con.createStatement();
                 rs = set.executeQuery(q);
                 
                 while(rs.next()){
-                //mientras exista un registro hay que obtener los datos de la consulta
-                    id = rs.getInt("id_usu");
-                    nom = rs.getString("nom_usu");
-                    appat = rs.getString("appat_usu");
-                    apmat = rs.getString("apmat_usu");
-                    edad = rs.getInt("edad_usu");
-                    correo = rs.getString("correo_usu");
+                    //mientras exista un registro hay que obtener los datos de la consulta
+                    id = rs.getInt("id_hel");
+                    name = rs.getString("name_hel");
+                    price = rs.getInt("price_hel");
+                    gram = rs.getInt("gram_hel");
+                    size = rs.getString("gram_hel");
+                    recipiente = rs.getString("recipiente_hel");
+                    tipo = rs.getString("tipo_hel");
                     
                     out.println("<tbody>"
                             + "<tr><td>"+id+"</td>"
-                            + "<td>"+nom+" "+appat+" "+apmat+" </td>"
-                            + "<td>"+edad+"</td>"
-                            + "<td>"+correo+"</td></tr>"
+                            + "<td>"+name+"</td>"
+                            + "<td>"+price+"</td>"
+                            + "<td>"+gram+"</td>"
+                            + "<td>"+size+"</td>"
+                            + "<td>"+recipiente+"</td>"
+                            + "<td>"+tipo+"</td></tr>"
                             + "</tbody>");
                 }
                 //hay que cerrar los hilos
                 rs.close();
                 set.close();
                 
-                System.out.println("Consulta Exitosa");
-            
-            
+                System.out.println("¡Consulta exitosa!");
+                    
             }catch(Exception e){
-                System.out.println("Error al realizar la consulta");
+                System.out.println("Error al realizar la consulta.");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
-            
             }
             out.println("</table>");
-            
-            
-            out.println("<br>"
-                    + "<a href='index.html'>Regresar a la pagina principal</a>"
-                    + "<br>"
-                    + "<a href='Registro'>Insertar nuevo Usuario</a>");
+            out.println("<br>");
+            out.println("<a class=\"link1\" href='index.html'>Regresar a la página principal.</a>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -196,11 +153,8 @@ public class Consultar extends HttpServlet {
     public void destroy(){
         try{
             con.close();
-            System.out.println("Se destruyo wiiii");
-        
         }catch(Exception e){
             super.destroy();
-        
         }
     }
     
