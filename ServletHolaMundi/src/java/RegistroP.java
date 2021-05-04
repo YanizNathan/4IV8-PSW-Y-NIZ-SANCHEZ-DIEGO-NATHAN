@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import javax.servlet.ServletConfig;
 
-public class Registro extends HttpServlet {
+public class RegistroP extends HttpServlet {
     private Connection con;
     private Statement set;
     private ResultSet rs;
@@ -63,7 +63,7 @@ public class Registro extends HttpServlet {
             puertoh = request.getRemotePort();
             
             try{
-                String q = "insert into promociones (name_hel, price_prom) values ('"+name+"','"+price+"')";
+                String q = "insert into promociones (nom_prom, price_prom) values ('"+name+"','"+price+"')";
                 set.executeUpdate(q);
                 System.out.println("¡Registro exitoso!");
                 

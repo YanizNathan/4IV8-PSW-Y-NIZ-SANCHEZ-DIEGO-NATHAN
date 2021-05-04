@@ -32,6 +32,10 @@
         <servlet-name>RegistroH</servlet-name>
         <servlet-class>RegistroH</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistroP</servlet-name>
+        <servlet-class>RegistroP</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>RegistroH</servlet-name>
         <url-pattern>/RegistroH</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroP</servlet-name>
+        <url-pattern>/RegistroP</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
