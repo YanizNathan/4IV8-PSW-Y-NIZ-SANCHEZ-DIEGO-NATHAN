@@ -41,16 +41,13 @@
                 <form name="formulario" method="get" action="Registro" onsubmit="return validarRegistro(this)">
                     <div class="user-details">
                         <div class="input-box">
+                            
                             <span class="details">Nombre</span>
-                            <input type="text" name="nombre" placeholder="Digite el nombre de la promoción" required>
-                            <span class="details"><br>Tipo</span><br>
-                            <select class="box_form">
-                                <option value="0">Como va a a ser la promocion?</option>
-                                <option value="10">10 %</option>
-                                <option value="25">20 %</option>
-                                <option value="50">50 %</option>
-                                <option value="75">75 %</option>
-                            </select>
+                            <input type="text" name="nombreprom" placeholder="Digite el nombre de la promoción" required>
+                            
+                             <span class="details"><br>De cuanto (%)</span>
+                            <input type="number" name="totalprom" placeholder="Cual porcentaje?" required>
+                         
                         </div>
                     </div>
                     <div class="button">
@@ -97,6 +94,7 @@
                             <span class="details">Digite la ID de lo que se busca actualizar</span>
                             <input type="number" name="idactualizar" placeholder="Digite el ID" required onkeypress="return validarn(event)">
                         </div>
+                        
                     </div>
                     <div class="button">
                         <input type="submit" value="Actualizar producto">

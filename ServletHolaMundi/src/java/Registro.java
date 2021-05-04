@@ -8,28 +8,30 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Arrays;
 import javax.servlet.ServletConfig;
 
 public class Registro extends HttpServlet {
-    
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
+    @Override
     public void init(ServletConfig cfg) throws ServletException{
-        String URL = "jdbc:mysql://localhost/registro4iv8";
-        String userName = "root";
-        String password = "vaquero24";
+        String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+        String userName = "b6feddf2b85dcc";
+        String password = "25b467ec";
                 
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
             System.out.println("Conexión exitosa");
-        }catch(Exception e){
+        }catch(ClassNotFoundException | SQLException e){
             System.out.println("Conexión no exitosa");
             System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
+            System.out.println(Arrays.toString(e.getStackTrace()));
         }
     }
 
@@ -46,15 +48,13 @@ public class Registro extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String nom, appat, apmat, correo, ip, iph;
-            int edad, puerto, puertoh;
+            String name,  ip, iph;
+            int price, gram, puerto, puertoh,tipo;
             
-            nom = request.getParameter("nombre");
-            appat = request.getParameter("appat");
-            apmat = request.getParameter("apmat");
-            correo = request.getParameter("correo");
-            
-            edad = Integer.parseInt(request.getParameter("edad"));
+            name = request.getParameter("nombreprom");
+            price = Integer.parseInt(request.getParameter("totalprom"));
+            gram = Integer.parseInt(request.getParameter("gram"));
+           
             
             ip = request.getLocalAddr();
             puerto = request.getLocalPort();
@@ -63,51 +63,51 @@ public class Registro extends HttpServlet {
             puertoh = request.getRemotePort();
             
             try{
-                String q = "insert into Mregistro (nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')";
+                String q = "insert into promociones (name_hel, price_prom) values ('"+name+"','"+price+"')";
                 set.executeUpdate(q);
-                System.out.println("Registro exitoso");
+                System.out.println("¡Registro exitoso!");
                 
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Registro</title>");
-                out.println("<link rel=\"stylesheet\" href=\"./CSS/estilo2.css\">");
+                out.println("<title>Administrar | Ben & Jerry's</title>");
+                
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1 class=\"title\">Registro exitoso</h1>");
+                out.println("<h1 class=\"title\">¡Registro exitoso!</h1>");
                 out.println("<br>");
                 out.println("<table class=\"tabla\" border='2'>"
                     + "<thead>"
-                        + "<th>Nombre Completo</th>"
-                        + "<th>Edad</th>"
-                        + "<th>Email</th></tr>"
+                        + "<th>Nombre</th>"
+                        + "<th>Tipo</th>"
+                       
                     + "</thead>");
                 out.println("<tbody>"
-                            + "<td>"+nom+" "+appat+" "+apmat+"</td>"
-                            + "<td>"+edad+"</td>"
-                            + "<td>"+correo+"</td></tr>"
+                            + "<td>"+name+"</td>"
+                            + "<td>"+price+"</td>"
+                           
                             + "</tbody>");
                 out.println("</table>");
-                out.println("<a class=\"link1\" href='index.html'>Regresar a la pagina principal</a>");
+                out.println("<a class=\"link1\" href='administrar_helado.html'>Regresar al módulo de administrador.</a>");
                 out.println("<br>");
-                out.println("<a class=\"link2\" href='Consultar'>Consultar Tabla General</a>");
+                out.println("<a class=\"link2\" href='Consultar'>Consultar la tabla de helados y prom.</a>");
                 out.println("</body>");
                 out.println("</html>");
             
-            }catch(Exception e){
+            }catch(SQLException e){
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Registro</title>");            
+                out.println("<title>Administrar | Ben & Jerry's</title>");
                 out.println("</head>");
                 out.println("<body>");
-                out.println("<h1>Registro no exitoso, vuelva a intentarlo</h1>" + "<a href='index.html'>Regresar a la pagina principal</a>");
+                out.println("<h1>Registro no exitoso. Intente de nuevo.</h1>" + "<a href='administrar_helado.html'>Regresar al módulo de administrador.</a>");
                 out.println("</body>");
                 out.println("</html>");
                 
-                System.out.println("No se registró en la tabla");
+                System.out.println("No se registró en la tabla.");
                 System.out.println(e.getMessage());
-                System.out.println(e.getStackTrace());
+                System.out.println(Arrays.toString(e.getStackTrace()));
             }
         }
     }
@@ -149,10 +149,11 @@ public class Registro extends HttpServlet {
     
     //hace falta un destructor, el destructor libera las conexiones y la memoria de las variables
     
+    @Override
     public void destroy(){
         try{
             con.close();
-        }catch(Exception e){
+        }catch(SQLException e){
             super.destroy();
         }
     }
