@@ -40,6 +40,10 @@
         <servlet-name>ConsulProm</servlet-name>
         <servlet-class>ConsulProm</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ElimProm</servlet-name>
+        <servlet-class>ElimProm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -75,6 +79,10 @@
     <servlet-mapping>
         <servlet-name>ConsulProm</servlet-name>
         <url-pattern>/ConsulProm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ElimProm</servlet-name>
+        <url-pattern>/ElimProm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

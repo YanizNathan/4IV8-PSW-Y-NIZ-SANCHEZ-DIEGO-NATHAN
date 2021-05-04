@@ -76,16 +76,30 @@
                 <form method="post" name="formularioeliminar" action="Eliminar" onsubmit="return validarIDE(this)"><br>
                     <div class="user-details">
                     <div class="input-box">
-                      <span class="details">Ingrese ID de lo que se busca eliminar</span>
-                      <input type="number" name="ideliminar" placeholder="Digite el ID" required onkeypress="return validarn(event)">
+                      <span class="details">Ingrese ID del producto a eliminar</span>
+                      <input type="number" name="ideliminar" placeholder="Digite el ID del producto" required onkeypress="return validarn(event)">
                     </div>
                     </div>
                     <div class="button">
                         <input type="submit" value="Eliminar producto">
                     </div>
-                    <div class="button">
-                        <input type="submit" value="Eliminar promoción">
+                 
+                </form>
+                <form method="post" name="formularioeliminar" action="ElimProm" onsubmit="return validarIDE(this)"><br>
+                    <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">Ingrese ID de la promocion a eliminar</span>
+                      <input type="number" name="ideliminarp" placeholder="Digite el ID de la promocion" required onkeypress="return validarn(event)">
                     </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Eliminar promocion">
+                    </div>
+                   
+            
+                    
+                    
+                    
                 </form>
             </div>
             <div class="containerActualizar">
