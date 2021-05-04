@@ -17,7 +17,7 @@ public class Actualizar extends HttpServlet {
     
     public void init(ServletConfig cfg) throws ServletException{
         //lo primero que necesitamos es trazar la ruta al servidor de la bd
-        String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+       String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
         String userName = "b6feddf2b85dcc";
         String password = "25b467ec";
                 
@@ -93,7 +93,7 @@ public class Actualizar extends HttpServlet {
             out.println("<div class=\"containerRegistro\">");
             out.println("<table border='2'>"
                     + "<thead>"
-                        + "<th><th>ID</th>"
+                        + "<th>ID</th>"
                         + "<th>Nombre</th>"
                         + "<th>Precio</th>"
                         + "<th>Gramos</th>"
@@ -103,7 +103,7 @@ public class Actualizar extends HttpServlet {
                     + "</thead>");
             try{
                 //mostramos los datos de el id del usuario ingresado en el index
-                String q="select * from helado where id_hel="+id;
+                String q="select * from helados where id_hel="+id;
                 set=con.createStatement();
                 rs=set.executeQuery(q);
                 while(rs.next()){
@@ -115,9 +115,10 @@ public class Actualizar extends HttpServlet {
                     recipiente = rs.getString("recipiente_hel");
                     tipo = rs.getString("tipo_hel");
                     out.println("<tbody>"
+                            + "<td>"+id+"</td>"
                             + "<td>"+name+"</td>"
                             + "<td>"+price+"</td>"
-                            + "<td>"+gram+"</td></tr>"
+                            + "<td>"+gram+"</td>"
                             + "<td>"+size+"</td>"
                             + "<td>"+recipiente+"</td>"
                             + "<td>"+tipo+"</td></tr>"
