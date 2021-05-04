@@ -36,6 +36,10 @@
         <servlet-name>RegistroP</servlet-name>
         <servlet-class>RegistroP</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsulProm</servlet-name>
+        <servlet-class>ConsulProm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>RegistroP</servlet-name>
         <url-pattern>/RegistroP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsulProm</servlet-name>
+        <url-pattern>/ConsulProm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
