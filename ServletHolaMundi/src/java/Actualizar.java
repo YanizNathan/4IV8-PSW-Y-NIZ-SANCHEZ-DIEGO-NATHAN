@@ -111,7 +111,7 @@ public class Actualizar extends HttpServlet {
                     name = rs.getString("name_hel");
                     price = rs.getInt("price_hel");
                     gram = rs.getInt("gram_hel");
-                    size = rs.getString("gram_hel");
+                    size = rs.getString("size_hel");
                     recipiente = rs.getString("recipiente_hel");
                     tipo = rs.getString("tipo_hel");
                     out.println("<tbody>"
@@ -132,35 +132,35 @@ public class Actualizar extends HttpServlet {
             out.println("</table>");
             out.println("<br>");
             out.println("<div class=\"containerRegistro\">");
-            out.println("<form name=\"datos_act\" method=\"get\" action=\"editarUsuario\" onsubmit=\"return validarDatosA(this)\">"
+            out.println("<form name=\"datos_act\" method=\"get\" action=\"EditarProd\" onsubmit=\"return validarDatosA(this)\">"
                     + "<div class=\"user-details\">"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Nombre</span>"
-                    + "<input type=\"text\" name=\"nombrea\" placeholder=\"Digite el nombre actualizado\" required>"
+                    + "<input type=\"text\" name=\"nombrepd\" placeholder=\"Digite el nombre actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Precio</span>"
-                    + "<input type=\"number\" name=\"pricea\" placeholder=\"Digite el precio actualizado\" required>"
+                    + "<input type=\"number\" name=\"pricepd\" placeholder=\"Digite el precio actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Gramos</span>"
-                    + "<input type=\"number\" name=\"grama\" placeholder=\"Digite los gramos actualizados\" required>"
+                    + "<input type=\"number\" name=\"grampd\" placeholder=\"Digite los gramos actualizados\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Tamaño</span>"
-                    + "<input type=\"text\" name=\"tamañoa\" placeholder=\"Digite el tamaño actualizado\" required>"
+                    + "<input type=\"text\" name=\"tamañopd\" placeholder=\"Digite el tamaño actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Recipiente</span>"
-                    + "<input type=\"text\" name=\"recipientea\" placeholder=\"Digite el recipiente actualizado\" required>"
+                    + "<input type=\"text\" name=\"recipientepd\" placeholder=\"Digite el recipiente actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">Tipo</span>"
-                    + "<input type=\"text\" name=\"tipoa\" placeholder=\"Digite el tipo actualizado\" required>"
+                    + "<input type=\"text\" name=\"tipopd\" placeholder=\"Digite el tipo actualizado\" required>"
                     + "</div>"
                     + "<div class=\"input-box\">"
                     + "<span class=\"details\">ID</span>"
-                    + "<input type=\"number\" name=\"ida\" placeholder=\"Digite el mismo ID\" required>"
+                    + "<input type=\"number\" name=\"idpd\" placeholder=\"Digite el mismo ID\" required>"
                     + "</div>"
                     + "<div class=\"button\">"
                     + "<input type=\"submit\" value=\"Actualizar datos\">"
@@ -176,6 +176,7 @@ public class Actualizar extends HttpServlet {
         }
     }
 
+    
     /**
      * Returns a short description of the servlet.
      *

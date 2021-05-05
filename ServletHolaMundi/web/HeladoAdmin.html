@@ -25,7 +25,7 @@
                             <span class="details"><br>Tamaño</span>
                             <input type="text" name="size" placeholder="De que tamaño?" required>
                             <span class="details"><br>En donde lo quiere poner</span>
-                            <input type="text" name="tipo" placeholder="Contenedor" required>
+                            <input type="text" name="recipiente" placeholder="Contenedor" required>
                             <span class="details"><br>Sabor</span>
                             <input type="text" name="tipo" placeholder="Que sabor" required>
                         </div>
@@ -107,17 +107,28 @@
                 <form method="post" name="formularioactualizar" action="Actualizar" onsubmit="return validarIDA(this)"><br>
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details">Digite la ID de lo que se busca actualizar</span>
+                            <span class="details">Digite la ID del producto que se quiere editar</span>
                             <input type="number" name="idactualizar" placeholder="Digite el ID" required onkeypress="return validarn(event)">
                         </div>
                         
                     </div>
-                    <div class="button">
+                     <div class="button">
                         <input type="submit" value="Actualizar producto">
                     </div>
-                    <div class="button">
-                        <input type="submit" value="Actualizar promoción">
+                </form>
+                
+                   
+                <form method="post" name="formularioactualizar" action="EditProd" onsubmit="return validarIDA(this)"><br>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Digite la ID de la promocion que se quiere editar</span>
+                            <input type="number" name="idactualizar" placeholder="Digite el ID" required onkeypress="return validarn(event)">
+                        </div>
                     </div>
+                    
+                        <div class="button">
+                        <input type="submit" value="Actualizar promoción">
+                        </div>
                 </form>
             </div>
         </div>

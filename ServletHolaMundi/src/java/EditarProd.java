@@ -4,13 +4,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
 
-public class Consultar extends HttpServlet {
+public class EditarProd extends HttpServlet {
     private Connection con;
     private Statement set;
     private ResultSet rs;
@@ -24,9 +25,9 @@ public class Consultar extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
-            System.out.println("¡Conexión exitosa!");
+            System.out.println("Conexión exitosa");
         }catch(Exception e){
-            System.out.println("Conexión no exitosa.");
+            System.out.println("Conexión no exitosa");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
         }
@@ -45,7 +46,7 @@ public class Consultar extends HttpServlet {
             throws ServletException, IOException {
         
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -61,73 +62,80 @@ public class Consultar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
+            //variables
+            String nom, tam, reci, tipo;
+            int id, gram, price;
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Consulta | Ben & Jerry's</title>");
-            out.println("<link rel=\"stylesheet\" href=\"./css/estilo2.css\">");
+            out.println("<title>Servlet editarUsuario</title>");
+           
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1 class=\"title\">Tabla de productos</h1>");
-            out.println("<table class=\"tabla2\" border='2'>"
-                    + "<thead>"
-                        + "<th>ID</th>"
-                        + "<th>Nombre</th>"
-                        + "<th>Precio</th>"
-                        + "<th>Gramos</th>"
-                        + "<th>Tamaño</th>"
-                        + "<th>Recipiente</th>"
-                        + "<th>Tipo</th>"
-                    + "</thead>");
+            out.println("<h1 class=\"title\">Editar Datos del producto</h1>");
+            out.println("<br>");
             try{
-                //codigo java para la consulta
-                String name, size, recipiente, tipo;
-                int id, price, gram;
+                //proceso para actualizar datos
+                nom=request.getParameter("nombrepd");
+                price = Integer.parseInt(request.getParameter("pricepd"));
+                gram =Integer.parseInt(request.getParameter("grampd"));
+                tam = request.getParameter("tamañopd");
+                reci = request.getParameter("recipientepd");
+                tipo= request.getParameter("tipopd");
+                id=Integer.parseInt(request.getParameter("idpd"));
+
+                String qN="UPDATE helados SET name_hel = '"+nom+"' WHERE id_hel = "+id;
+                String qP="UPDATE helados SET price_hel = '"+price+"' WHERE id_hel = "+id;
                 
-                //tenemos que crear la querry
+                String qG="UPDATE helados SET gram_hel = '"+gram+"' WHERE id_hel = "+id;
+                String qT="UPDATE helados SET size_hel = "+tam+" WHERE id_hel = "+id;
+                String qR="UPDATE helados SET recipiente_hel = '"+reci+"' WHERE id_hel = "+id;
+                String qS="UPDATE helados SET tipo_hel = '"+tipo+"' WHERE id_hel = "+id;
+           
                 
-                String q = "select * from helados";
+            
+            
+                //actualizacion del nombre
+                //set=con.createStatement();
+                set.executeUpdate(qN);
                 
-                set = con.createStatement();
-                rs = set.executeQuery(q);
+                //actualizacion del apellido paterno
+                //set=con.createStatement();
+                set.executeUpdate(qP);
                 
-                while(rs.next()){
-                    //mientras exista un registro hay que obtener los datos de la consulta
-                    id = rs.getInt("id_hel");
-                    name = rs.getString("name_hel");
-                    price = rs.getInt("price_hel");
-                    gram = rs.getInt("gram_hel");
-                    size = rs.getString("size_hel");
-                    recipiente = rs.getString("recipiente_hel");
-                    tipo = rs.getString("tipo_hel");
-                    
-                    out.println("<tbody>"
-                            + "<tr><td>"+id+"</td>"
-                            + "<td>"+name+"</td>"
-                            + "<td>"+price+"</td>"
-                            + "<td>"+gram+"</td>"
-                            + "<td>"+size+"</td>"
-                            + "<td>"+recipiente+"</td>"
-                            + "<td>"+tipo+"</td></tr>"
-                            + "</tbody>");
-                }
-                //hay que cerrar los hilos
-                rs.close();
-                set.close();
+                //actualizacon del apellido materno
+                //set=con.createStatement();
+                set.executeUpdate(qG);
                 
-                System.out.println("¡Consulta exitosa!");
-                    
+                //actualizacion de la edad
+                //set=con.createStatement();
+                set.executeUpdate(qT);
+                
+                //actualizacion del correo
+                //set=con.createStatement();
+                set.executeUpdate(qR);
+                //set=con.createStatement();
+                set.executeUpdate(qS);
+                
+                System.out.println("Actualización de datos Exitosa");
+                
             }catch(Exception e){
-                System.out.println("Error al realizar la consulta.");
+                System.out.println("Actualización de datos Fallida");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
             }
+            
+           
+            
             out.println("</table>");
+            out.println("<a class=\"link1\" href='index.html'>Regresar a la pagina principal </a>");
             out.println("<br>");
-            out.println("<a class=\"link1\" href='index.html'>Regresar a la página principal.</a>");
+            out.println("<a class=\"link2\" href='Consultar'>Consultar datos de usuarios </a>");
             out.println("</body>");
             out.println("</html>");
-        }
+        };
     }
 
     /**
@@ -149,15 +157,6 @@ public class Consultar extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    
-    public void destroy(){
-        try{
-            con.close();
-        }catch(Exception e){
-            super.destroy();
-        }
-    }
-    
     @Override
     public String getServletInfo() {
         return "Short description";

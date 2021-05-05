@@ -48,6 +48,10 @@
         <servlet-name>ActuaProm</servlet-name>
         <servlet-class>ActuaProm</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarProd</servlet-name>
+        <servlet-class>EditarProd</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -91,6 +95,10 @@
     <servlet-mapping>
         <servlet-name>ActuaProm</servlet-name>
         <url-pattern>/ActuaProm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarProd</servlet-name>
+        <url-pattern>/EditarProd</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
