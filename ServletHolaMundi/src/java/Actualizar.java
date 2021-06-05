@@ -17,7 +17,8 @@ public class Actualizar extends HttpServlet {
     
     public void init(ServletConfig cfg) throws ServletException{
         //lo primero que necesitamos es trazar la ruta al servidor de la bd
-       String URL = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_d889ba9407b37bc";
+       String URL = "jdbc:mysql://us-cdbr-east-04.cleardb.com/heroku_3dcf7b914574222";
+       
         String userName = "b6feddf2b85dcc";
         String password = "25b467ec";
                 
