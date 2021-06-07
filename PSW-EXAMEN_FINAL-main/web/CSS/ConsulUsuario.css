@@ -1,0 +1,52 @@
+body{
+   
+      background: #e9e9e9;
+    
+    font-family: "RobotoDraft", "Roboto", sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    
+    
+    
+}
+form{
+    position: relative;
+    max-width: 460px;
+    width: 100%;
+    margin: 10px auto 10px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input{
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 5px;
+    font-size: 24px;
+    font-weight: 400;
+    color:white ;
+    background: #ed2553;
+    border-radius: 15px;
+    border-color: #ed2553;
+    
+  }
+    
+  h1{
+      padding-top: 10px;
+      font-size: 40px;
+      color: black;
+      background: white;
+       width: 100%;
+        height: 60px;
+     border: 0;
+      max-width: 500px;
+      border-radius: 15px;
+  }
+    

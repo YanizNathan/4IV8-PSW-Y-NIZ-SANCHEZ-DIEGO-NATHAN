@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    <
+    
   
 <!-- Mixins-->
 <!-- Pen Title-->
@@ -57,13 +57,13 @@
     <h1 class="title">Inicio de Sesión</h1>
     <form method="post" name="IniciarSesionCliente" action="VerificarUsuario">
       <div class="input-container">
-        <input type="text" id="#{label}" name="usuario_cli" required="required"/>
-        <label for="#{label}">Nombre de Usuario</label>
+        <input type="text" name="usuario_cli" required="required"/>
+        <label>Nombre de Usuario</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="password" name="contra_cli" id="#{label}" required="required"/>
-        <label for="#{label}">Contraseña</label>
+        <input type="password" name="contra_cli"/>
+        <label>Contraseña</label>
         <div class="bar"></div>
       </div>
       <div class="button-container">

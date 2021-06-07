@@ -7,10 +7,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Consulta de usuarios</title>
+         <link rel="shortcut icon" type="image/x-icon" href="https://comodibujar.club/wp-content/uploads/2020/09/kawaii-helado.jpg">
+  
     </head>
     <body>
-        <h1>Uusarios</h1>
+        <h1>Usarios</h1>
         
                 <table>
             <thead>

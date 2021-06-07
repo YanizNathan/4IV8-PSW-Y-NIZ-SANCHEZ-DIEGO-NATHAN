@@ -6,6 +6,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="" type="image/x-icon" href="https://comodibujar.club/wp-content/uploads/2020/09/kawaii-helado.jpg">
+  
         <title>JSP Page</title>
         
         <style>
@@ -15,6 +17,7 @@
             }
             
         </style>
+        <link rel="stylesheet" href="./CSS/usuario.css">
         
     </head>
     <body>
@@ -35,22 +38,28 @@
         }
         %>
         
-        
-            <h1>Helados Benny and jerry</h1>
-            <a href="Close">Cerrar Sesión</a>
+        <div class="dtitle">
+            <h1 align="center" class="titulo">Helados Benny and jerry</h1>
+        </div>    
+        <hr>
         <div>
-            <div class="izquierda">
+            <div>
                 <%Cliente c = new Cliente();%>
                 <form method="post" action="ConsultarMiPerfil.jsp">
-                
-                <p>Ingrese su número de celular</p>
+                <p align="center">Consulta de perfil</p>
+                <p align="center">Ingrese su número de celular</p>
+              
                 <input name="numcel" placeholder="Número de celular">
-                <input type="submit" value="Consultar perfil"></a>
+                <input type="submit" class="consulta" value="Consultar perfil"></a>
+                <br>
+                <br>
+                <br>
+                  <a href="Close" class="cerrar">Cerrar Sesión</a>
                 </form>
             </div>
             <div class="derecha"></div>
         </div>
-        
+       
         
         
     </body>
