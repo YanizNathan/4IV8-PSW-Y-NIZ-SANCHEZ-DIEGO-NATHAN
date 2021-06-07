@@ -11,6 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="./CSS/tablas.css">
+        <link rel="shortcut icon" type="image/x-icon" href="https://comodibujar.club/wp-content/uploads/2020/09/kawaii-helado.jpg">
     </head>
     <body>
         
@@ -32,10 +34,10 @@
         
         <h1>Helados Benny and Jerry</h1>
         
-        <p>Registrar helado</p>
+        <h1 align="center">Registrar helado</h1>
         
-        <form method="post" name="RegistrarHelado" action="GuardarHelado">
-            <table border="2">
+        <form align="center"method="post" name="RegistrarHelado" action="GuardarHelado">
+            <table border="0">
                 <thead>
                     <tr>
                         <th>Sabor</th>
@@ -98,9 +100,9 @@
             </table>     
         </form>
 
-        <a href="ConsultarHelados.jsp">Consultar helados</a>
+    <center>  <a href="ConsultarHelados.jsp" >Consultar helados</a>
         
-        <a href="ConsultarUsuarios.jsp">Consultar usuarios</a>
+        <a href="ConsultarUsuarios.jsp">Consultar usuarios</a </center>
         
     </body>
 </html>

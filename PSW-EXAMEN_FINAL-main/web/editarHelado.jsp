@@ -12,9 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://comodibujar.club/wp-content/uploads/2020/09/kawaii-helado.jpg">
+        <link rel="stylesheet" href="./CSS/tablas.css">
     </head>
     <body>
-        <h1>Actualizar helados</h1>
+        <h1 align="center">Actualizar helados</h1>
         <form method="post" name="actualizarHelados" action="actualizarHelado">
             <table>
                 <%

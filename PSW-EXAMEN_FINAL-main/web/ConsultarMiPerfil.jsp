@@ -10,6 +10,7 @@
         <title>JSP Page</title>
         <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
         <link href='./CSS/ConsulUsuario.css' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" type="image/x-icon" href="https://comodibujar.club/wp-content/uploads/2020/09/kawaii-helado.jpg">
     </head>
     <body>
     <center>
