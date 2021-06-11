@@ -25,12 +25,13 @@ public class guardarLugar extends HttpServlet{
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
            
-            /*Ayuda no sé que pasa aquí*/
             
-            String nom_lug, st_lug;
-            int id_lug, id_ad, id_al, id_col, id_cp, id_tip, tel_lug, cal_lug;
+            System.out.println("Hola1");
+
+            String nom_lug, st_lug, tel_lug;
+            int id_ad, id_al, id_col, id_cp, id_tip, cal_lug;
     
-            tel_lug = Integer.parseInt(request.getParameter("tel_lug"));
+            tel_lug = request.getParameter("tel_lug");
             nom_lug = request.getParameter("nom_lug");
             cal_lug = Integer.parseInt(request.getParameter("cal_lug"));
             st_lug = request.getParameter("st_lug");
@@ -40,11 +41,11 @@ public class guardarLugar extends HttpServlet{
             id_cp = Integer.parseInt(request.getParameter("id_cp"));
             id_tip = Integer.parseInt(request.getParameter("id_tip"));
             
-            
+            System.out.println("Hola1");
             
             Lugar e = new Lugar();
             
-            e.setTel_lug( tel_lug);
+            e.setTel_lug(tel_lug);
             e.setNom_lug(nom_lug);
             e.setCal_lug(cal_lug);
             e.setSt_lug(st_lug);
@@ -54,11 +55,13 @@ public class guardarLugar extends HttpServlet{
             e.setId_cp(id_cp);
             e.setId_tip(id_tip);
             
+            
+            
             int estatus = AccionesLugar.registrarLugar(e);
             
             
             if(estatus > 0){
-                response.sendRedirect("registroUsuario.jsp");
+                response.sendRedirect("registroLugar.jsp");
             }else{
                 response.sendRedirect("error.jsp");
             }
