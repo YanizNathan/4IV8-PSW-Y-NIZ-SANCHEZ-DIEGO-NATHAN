@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Servlet.cerrarSesion;
 
 public class usuarioActualizar extends HttpServlet{
     
@@ -29,37 +30,29 @@ public class usuarioActualizar extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+          try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println("hola");
-            int id_usu;
             
+            int id_usu = Integer.parseInt(request.getParameter("id_usu2"));
+            System.out.println(id_usu);
             String nom_usu, con_usu, ema_usu;
             
             nom_usu = request.getParameter("nom_usu2");
             con_usu = request.getParameter("con_usu2");
             ema_usu = request.getParameter("ema_usu2");
-         
-            System.out.println("llego");
+            
             
             Usuario e = new Usuario();
-             System.out.println(e.getNom_usu());
-            System.out.println(e.getCon_usu());
-            System.out.println(e.getEma_usu());
             
+            e.setId_usu(id_usu);
             e.setNom_usu(nom_usu);
             e.setCon_usu(con_usu);
             e.setEma_usu(ema_usu);
-             System.out.println("llego");
-              System.out.println(e.getNom_usu());
-            System.out.println(e.getCon_usu());
-            System.out.println(e.getEma_usu());
             
             int estatus = AccionesUsuario.actualizarUsuario(e);
-            System.out.println(estatus);
             
             if(estatus > 0){
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("cerrarSesion");
                 /* cosas de diseño */
             }else{
                 response.sendRedirect("error.jsp");

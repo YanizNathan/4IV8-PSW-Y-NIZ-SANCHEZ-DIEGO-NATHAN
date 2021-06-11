@@ -48,27 +48,18 @@ public class AccionesUsuario {
         int estatus = 0;
         try{
             Connection con = Conexion.getConnection();
-            String q = "update MUsuario set con_usu = ?,"
+            String q = "update MUsuario set nom_usu = ?, con_usu = ?,"
                     + "ema_usu = ?"
-                    + " where nom_usu = ?";
-            System.out.println(e.getNom_usu());
-            System.out.println(e.getCon_usu());
-            System.out.println(e.getEma_usu());
-            
+                    + " where id_usu = ?";
             
             PreparedStatement ps = con.prepareStatement(q);
-             System.out.println(e.getNom_usu());
-            System.out.println(e.getCon_usu());
-            System.out.println(e.getEma_usu());
             
             ps.setString(1, e.getNom_usu());
             ps.setString(2, e.getCon_usu());
             ps.setString(3, e.getEma_usu());
-            
+            ps.setInt(4, e.getId_usu());
             
             estatus = ps.executeUpdate();
-            
-            System.out.println(estatus);
             System.out.println("Actualizacion del usuario exitosa.");
             con.close();
         }catch(Exception ed){

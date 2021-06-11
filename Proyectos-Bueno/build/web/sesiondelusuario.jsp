@@ -57,21 +57,16 @@
         <form method="post" name="usuarioActualizar" action="usuarioActualizar">
                     <table border="2" >
                         <%
-                            
-                             PrintWriter pw= response.getWriter();
-                            String nom_usu = ""; 
-                             
                            
-                            pw.println(nom_usu);
                             
                             Usuario e = AccionesUsuario.buscarUsuarioByNom(sesionuok.getAttribute("usuario").toString());
                             %>
                             <tr>
                                 <td> Id: </td>
-                                <td><p><%=e.getId_usu()%></p></td> 
+                                <td> <input  name="id_usu2" value="<%=e.getId_usu()%>" readonly></input></td>
                             </tr>
                             <tr>
-                                <%int id_usu2 =e.getId_usu();%>
+                           
                             
                             <td>Nombre:</td>
                             <td><input type="text" name="nom_usu2" size="30" value="<%=e.getNom_usu()%>"></td>        
